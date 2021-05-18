@@ -1,0 +1,4 @@
+.DS_Store
+seeds*
+*.gdf
+geckodriver.log
