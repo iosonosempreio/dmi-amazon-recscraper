@@ -2,3 +2,4 @@
 seeds*
 *.gdf
 geckodriver.log
+results/
