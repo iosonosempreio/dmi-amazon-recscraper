@@ -108,7 +108,7 @@ def generate_recommendation_network(seeds, depth=0, prefix="", max_carousel_item
     while current_depth <= depth:
         # we use ASINs as unique identifiers - they can be found at a
         # predictable place in the product page URL
-        seed_asins |= set([re.split("/(d|g)p/", seed)[1].split("/")[0] for seed in seeds])
+        seed_asins |= set([seed.split("/dp/")[1].split("/")[0] for seed in seeds])
         if not initial_asins:
             initial_asins = seed_asins
 
@@ -130,7 +130,7 @@ def generate_recommendation_network(seeds, depth=0, prefix="", max_carousel_item
                 print("- no results, link may be invalid")
                 continue
 
-            seed_asin = re.split("/(d|g)p/", seed)[1].split("/")[0]
+            seed_asin = seed.split("/dp/")[1].split("/")[0]
 
             # process recommendations
             for list_title, list_items in recommendations.items():
