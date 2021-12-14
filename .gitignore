@@ -1,3 +1,5 @@
 
 geckodriver.log
 seeds.txt
+.DS_Store
+results/
